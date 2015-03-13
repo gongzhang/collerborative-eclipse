@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Cct
+Bundle-SymbolicName: com.collaborativeeclipse.cct; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.collaborativeeclipse.cct.Activator
+Bundle-Vendor: COLLABORATIVEECLIPSE
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.junit
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy

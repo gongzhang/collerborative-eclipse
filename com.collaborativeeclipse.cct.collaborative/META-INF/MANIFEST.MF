@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Collaborative
+Bundle-SymbolicName: com.collaborativeeclipse.cct.collaborative;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: COLLABORATIVEECLIPSE
+Fragment-Host: com.collaborativeeclipse.cct;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: com.collaborativeeclipse.im;bundle-version="1.0.0"

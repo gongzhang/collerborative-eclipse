@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="com.collaborativeeclipse.cct.TagAddListener" name="TagAddListener" schema="schema/com.collaborativeeclipse.cct.TagAddListener.exsd"/>
+   <extension-point id="com.collaborativeeclipse.cct.TagShower" name="TagShower" schema="schema/com.collaborativeeclipse.cct.TagShower.exsd"/>
+   <extension-point id="com.collaborativeeclipse.cct.TagDataProvider" name="TagDataProvider" schema="schema/com.collaborativeeclipse.cct.TagDataProvider.exsd"/>
+   <extension-point id="com.collaborativeeclipse.cct.TagRemoveListener" name="TagRemoveListener" schema="schema/com.collaborativeeclipse.cct.TagRemoveListener.exsd"/>
+   <extension-point id="com.collaborativeeclipse.cct.ExceptionHandler" name="ExceptionHandler" schema="schema/com.collaborativeeclipse.cct.ExceptionHandler.exsd"/>
+   <extension-point id="com.collaborativeeclipse.cct.Initialize" name="Initialize" schema="schema/com.collaborativeeclipse.cct.Initialize.exsd"/>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="TagShower"
+            id="com.collaborativeeclipse.cct">
+      </category>
+      <view
+            name="TagShower"
+            icon="icons/sample.gif"
+            category="com.collaborativeeclipse.cct"
+            class="com.collaborativeeclipse.cct.internal.views.TagShower"
+            id="com.collaborativeeclipse.cct.internal.views.TagShower">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.TaskList"
+               relationship="right"
+               id="com.collaborativeeclipse.cct.views.TagShower">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+   <extension
+         point="com.collaborativeeclipse.cct.TagShower">
+      <reciever
+            class="com.collaborativeeclipse.cct.internal.views.TagShower">
+      </reciever>
+   </extension>
+   <extension
+         point="com.collaborativeeclipse.cct.TagShower">
+      <reciever
+            class="com.collaborativeeclipse.cct.example.views.ConsoleShower">
+      </reciever>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="com.collaborativeeclipse.cct.actionSet"
+            label="Sample Action Set"
+            visible="true">
+         <menu
+               id="sampleMenu"
+               label="Sample &amp;Menu">
+            <separator
+                  name="sampleGroup">
+            </separator>
+         </menu>
+         <action
+               class="com.collaborativeeclipse.cct.example.actions.example"
+               icon="icons/sample.gif"
+               id="com.collaborativeeclipse.cct.example.actions.example"
+               label="&amp;Sample Action"
+               menubarPath="sampleMenu/sampleGroup"
+               toolbarPath="sampleGroup"
+               tooltip="Hello, Eclipse world">
+         </action>
+      </actionSet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="com.collaborativeeclipse.cct.actionSet1"
+            label="label">
+      </actionSet>
+   </extension>
+   <extension
+         point="com.collaborativeeclipse.cct.TagAddListener">
+      <handler
+            class="com.collaborativeeclipse.cct.example.extension.TagAddMonitor">
+      </handler>
+   </extension>
+   <extension
+         point="com.collaborativeeclipse.cct.TagAddListener">
+      <handler
+            class="com.collaborativeeclipse.cct.tagdata.TagAccessNativeDatabaseImpl">
+      </handler>
+   </extension>
+   <extension
+         point="com.collaborativeeclipse.cct.TagDataProvider">
+      <handler
+            class="com.collaborativeeclipse.cct.tagdata.TagAccessNativeDatabaseImpl">
+      </handler>
+   </extension>
+   <extension
+         point="com.collaborativeeclipse.cct.TagRemoveListener">
+      <handler
+            class="com.collaborativeeclipse.cct.tagdata.TagAccessNativeDatabaseImpl">
+      </handler>
+   </extension>
+   <extension
+         point="com.collaborativeeclipse.cct.ExceptionHandler">
+      <handler
+            class="com.collaborativeeclipse.cct.example.ExceptionHandler">
+      </handler>
+   </extension>
+
+</plugin>

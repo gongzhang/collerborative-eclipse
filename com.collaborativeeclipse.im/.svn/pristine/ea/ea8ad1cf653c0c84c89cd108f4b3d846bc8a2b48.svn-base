@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Im
+Bundle-SymbolicName: com.collaborativeeclipse.im; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.collaborativeeclipse.im.Activator
+Bundle-Vendor: COLLABORATIVEECLIPSE
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .,
+ lib/smack.jar,
+ lib/smackx.jar
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.swt,
+ org.eclipse.ui,
+ org.eclipse.core.resources,
+ org.eclipse.jdt.ui,
+ org.eclipse.ui.editors,
+ org.eclipse.jdt.core,
+ org.eclipse.jface.text
+Import-Package: org.eclipse.ui.part
+Export-Package: com.collaborativeeclipse.im,
+ org.jivesoftware.smack,
+ org.jivesoftware.smackx
+Import-Package: org.eclipse.core.runtime
